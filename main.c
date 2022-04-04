@@ -11,26 +11,26 @@ int b = 0;
 
 void *task1(void * args){
 	pthread_mutex_lock(&mutex);
-	printf("\n thread 1 inicio\n");
+	printf("\n -- thread 1 start --\n");
 	int res = a + b;
-	printf("%d",res);
-	printf("\n thread 1 final\n");
+	printf(" Sum = %d",res);
+	printf("\n -- thread 1 end --\n");
 	pthread_mutex_unlock(&mutex);
 }
 
 void *task2(void * args){
 	pthread_mutex_lock(&mutex);
-	printf("\n thread 2 inicio\n");
+	printf("\n -- thread 2 start --\n");
 	int res = a * b;
-	printf("%d",res);
-	printf("\n thread 2 final\n");
+	printf(" Multi = %d",res);
+	printf("\n -- thread 2 end --\n");
 	pthread_mutex_unlock(&mutex);
 }
 
 int init_var(){
-	printf("\n digite a: ");
+	printf("\n Type first number: ");
 	scanf("%d",&a);
-	printf("\n digite b: "); 
+	printf("\n Type second number: "); 
 	scanf("%d",&b);
 	return 0;
 }
